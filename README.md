@@ -52,11 +52,11 @@ else:
 
 ​	1.Windows搜索框搜索`任务计划程序`
 
-​	![](img/1.png “步骤1”)
+​	![](https://github.com/kimal2/SZU-internet-autoconnect/blob/c279dfbc990c0f0f49dbd0fde7187e43eeaf58fc/img/1.png)
 
 ​	2.打开后在右边选择`创建任务`，在弹出的新窗口选`触发器`下面有个`建新`，开始任务选`启动时`延迟改为`3秒`（先选30秒再手动改为3秒，这里延迟时间按你的电脑来，电脑慢的可以选择久一点）然后确定。然后再次建新，这次开始任务选择`工作站解锁时`,延迟同上
 
-​	![](img/2.png “步骤2”)
+​	![](https://github.com/kimal2/SZU-internet-autoconnect/blob/c279dfbc990c0f0f49dbd0fde7187e43eeaf58fc/img/2.png)
 
 ​	3.第二步完成后选触发器右边的`操作`,新窗口的操作选择`启动程序`，`程序或脚本`那里找到你安装Python的目录选择`pythonw.exe`这样运行不会有弹窗，接下来是`添加参数`，里面填你的.py文件的地址，注意这个要把文件名也加上去，如
 
@@ -70,7 +70,7 @@ C:\Users\username\Downloads\1.py
 C:\Users\username\Downloads
 ```
 
-​	![](img/3.png “步骤3”)	
+​	![](https://github.com/kimal2/SZU-internet-autoconnect/blob/c279dfbc990c0f0f49dbd0fde7187e43eeaf58fc/img/3.png)
 
 ​	4.条件里的电源选项选择`唤醒计算机运行此任务`
 
