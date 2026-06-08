@@ -4,83 +4,51 @@
 
 宿舍区插网线上网或WiFi都可以用
 
-本方法需要**Python**
+本方法需要 **Python**
 
+## 1. 安装依赖
 
-
-## 1.安装Python，然后安装requests
-
-​	1.安装Python，这里不做教程，自行百度
-
-​	2.安装完成后，打开CMD输入以下命令来安装requests库
+1. 安装 Python，这里不做教程，自行百度
+2. 打开 CMD 安装依赖库：
 
 ```
-	pip install requests
+pip install requests cryptography
 ```
 
+## 2. 配置脚本
 
+1. 下载 `上网.py`，放到一个不被打扰的地方
+2. 首次运行会提示输入账号和密码，自动加密保存到 `config.json`（无需手动编辑代码）
+3. 后续运行会自动读取加密配置并登录
 
-## 2.编辑Python代码
+## 3. Windows 自动任务
 
-​	1.复制以下代码，或者下载上传的.py文件
+1. Windows 搜索框搜索 **任务计划程序**
 
-```
-import requests
+   ![1](img/1.png)
 
-def check_network_connection():
-    try:
-        response = requests.head("http://www.baidu.com", timeout=5)
-        return response.status_code == 200
-    except requests.ConnectionError:
-        return False
+2. 打开后在右边选择 **创建任务**，在弹出的新窗口选 **触发器** 下面有个 **新建**，开始任务选 **启动时** 延迟改为 **3秒**（先选30秒再手动改为3秒，电脑慢的可以选久一点）然后确定。然后再次新建，这次开始任务选择 **工作站解锁时**，延迟同上
 
-user_account  = ""     #引号里输入你的卡号
-user_password = ""     #引号里输入你的密码
+   ![2](img/2.png)
 
-if check_network_connection():
-    exit()
-else:
-    response = requests.get(f"http://172.30.255.42:801/eportal/portal/login/?user_account={user_account}&user_password={user_password}")
-    print(response.text)
-```
-
-​	2.建新文本粘贴此代码，按提示输入你的卡号和密码，保存后退出，然后将文件扩展名改为.py，把这个文件放到一个不被打扰的地方
-
-
-
-## 3.Windows自动任务
-
-​	1.Windows搜索框搜索`任务计划程序`
-
-​	![1](https://github.com/kimal2/SZU-internet-autoconnect/blob/c279dfbc990c0f0f49dbd0fde7187e43eeaf58fc/img/1.png)
-
-​	2.打开后在右边选择`创建任务`，在弹出的新窗口选`触发器`下面有个`建新`，开始任务选`启动时`延迟改为`3秒`（先选30秒再手动改为3秒，这里延迟时间按你的电脑来，电脑慢的可以选择久一点）然后确定。然后再次建新，这次开始任务选择`工作站解锁时`,延迟同上
-
-​	![2](https://github.com/kimal2/SZU-internet-autoconnect/blob/c279dfbc990c0f0f49dbd0fde7187e43eeaf58fc/img/2.png)
-
-​	3.第二步完成后选触发器右边的`操作`,新窗口的操作选择`启动程序`，`程序或脚本`那里找到你安装Python的目录选择`pythonw.exe`这样运行不会有弹窗，接下来是`添加参数`，里面填你的.py文件的地址，注意这个要把文件名也加上去，如
+3. 第二步完成后选触发器右边的 **操作**，新窗口的操作选择 **启动程序**，**程序或脚本** 那里找到你安装 Python 的目录选择 `pythonw.exe` 这样运行不会有弹窗，接下来是 **添加参数**，里面填你的 `.py` 文件的地址，**注意要把文件名也加上去**，如
 
 ```
-C:\Users\username\Downloads\1.py
+C:\Users\username\Downloads\上网.py
 ```
 
-然后是`起始于`，这个很简单直接把上面的“\文件.py”删了粘贴进去就行，如
+   然后是 **起始于**，直接把上面的 `\上网.py` 删了粘贴进去就行，如
 
 ```
 C:\Users\username\Downloads
 ```
 
-​	![3](https://github.com/kimal2/SZU-internet-autoconnect/blob/c279dfbc990c0f0f49dbd0fde7187e43eeaf58fc/img/3.png)
+   ![3](img/3.png)
 
-​	4.条件里的电源选项选择`唤醒计算机运行此任务`
+4. 条件里的电源选项选择 **唤醒计算机运行此任务**
 
+## 4. 大功告成
 
+这破校园网每次启动都掉线，迫不得已搞了个这个，感谢 AI 提供的大部分代码，谢谢 KIMI、豆包等 AI 的支持，你们辛苦了 ❤️，有问题可以问 AI 因为我也不会 ：）
 
-## 4.大功告成
-
-
-
-这破校园网每次启动都掉线，迫不得已搞了个这个，感谢AI提供的大部分代码，谢谢KIMI、豆包等AI的支持，你们辛苦了❤️，有问题可以问AI因为我也不会：）
-
-还有感谢[[抓包分析,一条Linux命令实现路由器自动登录深大校园网认证(Drcom Pt版)_172.30.255.42-CSDN博客](https://blog.csdn.net/TeleostNaCl/article/details/124553119)]的URL
-
+还有感谢 [抓包分析，一条 Linux 命令实现路由器自动登录深大校园网认证(Drcom Pt 版)_172.30.255.42-CSDN 博客](https://blog.csdn.net/TeleostNaCl/article/details/124553119) 的 URL
