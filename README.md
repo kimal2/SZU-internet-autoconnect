@@ -49,6 +49,6 @@ C:\Users\username\Downloads
 
 ## 4. 大功告成
 
-这破校园网每次启动都掉线，迫不得已搞了个这个，感谢 AI 提供的大部分代码，谢谢 KIMI、豆包等 AI 的支持，你们辛苦了 ❤️，有问题可以问 AI 因为我也不会 ：）
+这破校园网每次启动都掉线，迫不得已搞了个这个，感谢 AI 提供的大部分代码，谢谢DeepSeek等 AI 的支持，你们辛苦了 ❤️，有问题可以问 AI 因为我也不会 ：）
 
 还有感谢 [抓包分析，一条 Linux 命令实现路由器自动登录深大校园网认证(Drcom Pt 版)_172.30.255.42-CSDN 博客](https://blog.csdn.net/TeleostNaCl/article/details/124553119) 的 URL
